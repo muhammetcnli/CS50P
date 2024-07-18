@@ -1,33 +1,25 @@
-user_input = input("Expression: ")
+user_expression = input("Expression: ")
 
-sum = ""
+if user_expression.__contains__("+"):
 
-userlist = user_input.split()
+    user_list = user_expression.split("+")
+    print(float(user_list[0]) + float(user_list[1]))
 
+elif user_expression.__contains__("-"):
 
-if len(userlist) == 0:
-    print("You don't enter anything.")
+    user_list = user_expression.split("-")
+    print(float(user_list[0]) - float(user_list[1]))
 
-elif userlist[1] == "+":
+elif user_expression.__contains__("*"):
 
-    sum = float(userlist[0]) + float(userlist[2])
+    user_list = user_expression.split("*")
+    print(float(user_list[0]) * float(user_list[1]))
 
-elif userlist[1] == "-":
+elif user_expression.__contains__("/"):
 
-    sum = float(userlist[0]) - float(userlist[2])
-
-elif userlist[1] == "*":
-
-    sum = float(userlist[0]) * float(userlist[2])
-
-elif userlist[1] == "/" and userlist[2] == "0":
-
-    print("You can't divide a number by 0.")
-
-elif userlist[1] == "/":
-     
-     sum = round(float(userlist[0]) / float(userlist[2]), 1)
-else:
-    print("Wrong input.")
-
-print(sum)
+    user_list = user_expression.split("/")
+    if user_list[1] == "0":
+        print("You can't divide a number by 0")
+    else:
+        print(round(float(user_list[0]) / float(user_list[1]), 1))
+    
