@@ -8,11 +8,11 @@ def main():
 def is_valid(s):
     if len(s) == 0:
         return False
-    
+
     for char in s:
         if len(s) == 1:
             return False
-        
+
         if s[0].isdigit() or s[1].isdigit():
             # checking for starting with 2 letters
             return False
@@ -24,20 +24,19 @@ def is_valid(s):
             return False
         elif char.isdigit():
             numlist = s[s.index(char):]
-            print(numlist)
             for num in numlist:
                 if not num.isdigit():
                     return False
-            
+
             if numlist[0] == "0":
                 return False
-            
+
 
 
             return True
-                
-        
+
+
     return True
 
-    
+
 main()
